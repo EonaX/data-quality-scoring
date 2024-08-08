@@ -1,4 +1,6 @@
-# data-quality-scoring
+# Data Quality Scoring Tool
+
+## Presentation
 
 This program aims at providing different data quality scores and visualization of a given dataset.
 
@@ -7,9 +9,21 @@ First of all, it is concerned with data completeness. It will provide:
  + a score of the data completeness according to a scoring formula with weights related to specific fields previously defined by the data provider.
  + data visualizations to get the big picture and eventually identify outliers.
 
-Functional Schema:
+Secondly, it will suggests improvements to the user.
+
+## Functional Schema
 ![Functional Schema](https://github.com/EonaX/data-quality-scoring/blob/main/docs/20240808_data_quality_scoring_tool_functional_schema.png)
 
-Scoring Formula:
-Quality Rules:
-Local Completeness Scoring
+Inputs:
+ + Scoring Formula
+ + Dataset
+ + Quality Rules
+
+Scripts:
+ + Local Completeness Scoring
+ + Global Completeness Scoring
+
+Outputs:
+ + Global Completeness Score/Visualization
+ + Local Completeness Score/Visualization
+ + Improvement Suggestions
