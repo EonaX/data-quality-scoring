@@ -6,7 +6,7 @@ Created on Thu Aug  8 14:47:50 2024
 @author: maximeb
 """
 
-from data.load import apidae_data
+from data.load import apidae_data, apidae_schemas
 from pprint import pprint
 
 list_types = []
