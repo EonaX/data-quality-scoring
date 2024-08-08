@@ -17,8 +17,7 @@ for n in range(len(apidae_data['objetsTouristiques'])):
 print(f'Unique types of objetsTouristiques:\n{set(list_types)}')
 
 #%% DATA ANALYSIS
-
-# types and number of fields per objetsTouristiques
+#%%% types and number of fields per objetsTouristiques
 
 for n in apidae_data['objetsTouristiques']:
     print("Objet Touristique:", n['nom']['libelleFr'])
@@ -26,8 +25,7 @@ for n in apidae_data['objetsTouristiques']:
     print("Nombre de champs:", len(n), "\n")
 
 #%% SCHEMAS ANALYSIS
-
-# types of objetsTouristiques
+#%%% types of objetsTouristiques
 
 print("Types d'objets touristiques modélisés:\n")
 
@@ -35,7 +33,7 @@ for n in apidae_schemas['properties']['objetsTouristiques']['items']:
     print('Type:', n['id'])
     print('Nombre de champs:', len(n['properties'].keys()), '\n')
     
-#%% properties per objetsTouristiques
+#%%% properties per objetsTouristiques
 
 print("Propriétés par types d'objets touristiques modélisés:\n")
 
@@ -47,7 +45,7 @@ for n in range(len(apidae_schemas['properties']['objetsTouristiques']['items']))
     if key == 'y':
             pprint(apidae_schemas['properties']['objetsTouristiques']['items'][n]['properties'], depth = 1)
 
-#%% shared properties between all objetsTouristiques
+#%%% shared properties between all objetsTouristiques
 
 l = []
 
