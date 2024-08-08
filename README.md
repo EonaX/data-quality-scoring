@@ -27,3 +27,6 @@ Secondly, it will suggests improvements to the user.
  + **Global Completeness Score/Visualization**: in addition to the completeness score and percentage information, different data visualizations are proposed.
  + **Local Completeness Score/Visualization**: in addition to the completeness score and percentage information, different data visualizations are proposed.
  + **Improvement Suggestions**: depending on the type of data (numerical (discrete, continuous), categorical or ordinal), it suggests a default value (mean, most frequent, median, previous value, etc.) to the user. Caution with this functionality.
+
+ ## Python Project Architecture Schema
+ ![Python Project Architecture Schema](docs/20240808_data_quality_scoring_tool_python_project_architecture.png)
