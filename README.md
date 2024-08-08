@@ -15,15 +15,15 @@ Secondly, it will suggests improvements to the user.
 ![Functional Schema](https://github.com/EonaX/data-quality-scoring/blob/main/docs/20240808_data_quality_scoring_tool_functional_schema.png)
 
 Inputs:
- + Scoring Formula: this is where are defined the **weights** to the corresponding fields. For example, the field *POI_name* has a 0.05 weight of the total score (which is equal to 1).
- + Dataset .csv/.json: can welcome different types of data sets
- + Quality Rules: this is where an **empty value** is defined, e.g.: equal to "null", "0", etc.
+ + **Scoring Formula**: this is where are defined the weights to the corresponding fields. For example, the field *POI_name* has a 0.05 weight of the total score (which is equal to 1).
+ + **Dataset .csv/.json**: can welcome different types of data sets
+ + **Quality Rules**: this is where an empty value is defined, e.g.: equal to "null", "0", etc.
 
 Scripts:
- + Local Completeness Scoring: instance granularity. Scoring presupposes that the scoring formula and a standard data model have been defined beforehand, while percentage information about completeness does not.
- + Global Completeness Scoring: whole dataset granularity. Scoring presupposes that the scoring formula and a standard data model have been defined beforehand, while simple percentage information about completeness does not.
+ + **Local Completeness Scoring**: instance granularity. Scoring presupposes that the scoring formula and a standard data model have been defined beforehand, while percentage information about completeness does not.
+ + **Global Completeness Scoring**: whole dataset granularity. Scoring presupposes that the scoring formula and a standard data model have been defined beforehand, while simple percentage information about completeness does not.
 
 Outputs:
- + Global Completeness Score/Visualization: in addition to the completeness score and percentage information, different data visualizations are proposed.
- + Local Completeness Score/Visualization: in addition to the completeness score and percentage information, different data visualizations are proposed.
- + Improvement Suggestions: depending on the type of data (numerical (discrete, continuous), categorical or ordinal), it suggests a default value (mean, most frequent, median, previous value, etc.) to the user. Caution with this functionality.
+ + **Global Completeness Score/Visualization**: in addition to the completeness score and percentage information, different data visualizations are proposed.
+ + **Local Completeness Score/Visualization**: in addition to the completeness score and percentage information, different data visualizations are proposed.
+ + **Improvement Suggestions**: depending on the type of data (numerical (discrete, continuous), categorical or ordinal), it suggests a default value (mean, most frequent, median, previous value, etc.) to the user. Caution with this functionality.
