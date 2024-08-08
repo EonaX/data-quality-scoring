@@ -16,25 +16,26 @@ for n in range(len(apidae_data['objetsTouristiques'])):
  
 print(f'Unique types of objetsTouristiques:\n{set(list_types)}')
 
-#%% data
+#%% DATA ANALYSIS
 
 # types and number of fields per objetsTouristiques
 
-for n in range(len(apidae_data['objetsTouristiques'])):
-    print("Objet Touristique: {apidae_data['objetsTouristiques'][n]['nom']['libelleFr']}")
-    print(f"Type: {apidae_data['objetsTouristiques'][n]['type']}")
-    print(f"Nombre de champs:{len(apidae_data['objetsTouristiques'][n])}\n")
+for n in apidae_data['objetsTouristiques']:
+    print("Objet Touristique:", n['nom']['libelleFr'])
+    print("Type:", n['type'])
+    print("Nombre de champs:", len(n), "\n")
 
-#%% schemas
+#%% SCHEMAS ANALYSIS
 
 # types of objetsTouristiques
 
 print("Types d'objets touristiques modélisés:\n")
 
-for n in range(len(apidae_schemas['properties']['objetsTouristiques']['items'])):
-    print(apidae_schemas['properties']['objetsTouristiques']['items'][n]['id'])
-
-# properties per objetsTouristiques
+for n in apidae_schemas['properties']['objetsTouristiques']['items']:
+    print('Type:', n['id'])
+    print('Nombre de champs:', len(n['properties'].keys()), '\n')
+    
+#%% properties per objetsTouristiques
 
 print("Propriétés par types d'objets touristiques modélisés:\n")
 
@@ -46,3 +47,13 @@ for n in range(len(apidae_schemas['properties']['objetsTouristiques']['items']))
     if key == 'y':
             pprint(apidae_schemas['properties']['objetsTouristiques']['items'][n]['properties'], depth = 1)
 
+#%% shared properties between all objetsTouristiques
+
+l = []
+
+for n in apidae_schemas['properties']['objetsTouristiques']['items']:  
+    l.append(set(list(n['properties'].keys())))
+    
+common_fields = (set.intersection(*l))
+
+print('Champs communs à tous les objets touristiques:\n', common_fields)
