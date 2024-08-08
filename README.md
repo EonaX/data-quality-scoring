@@ -6,7 +6,7 @@ This program aims at providing different data quality scores and visualization o
 
 First of all, it is concerned with data completeness. It will provide:
  + a percentage of null values for each field, either globally – i.e. for the whole data set –, or locally – i.e. for a given instance of the data set;
- + a score of the data completeness according to a scoring formula with weights related to specific fields previously defined by the data provider.
+ + a score of the data completeness according to a scoring formula with weights related to specific fields previously defined by the data provider;
  + data visualizations to get the big picture and eventually identify outliers.
 
 Secondly, it will suggests improvements to the user.
@@ -38,5 +38,5 @@ It is organized with three folders and a **main.py** file:
  + **main.py**: orchestrates and executes the different above-mentioned scripts
 
 Later will be added:
- + **suggestions**: folder that contains scripts to suggest improvements.
+ + **suggestions**: folder that contains scripts to suggest improvements to the user.
 
