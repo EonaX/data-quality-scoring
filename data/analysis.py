@@ -6,8 +6,9 @@ Created on Thu Aug  8 14:47:50 2024
 @author: maximeb
 """
 
-from data.load import apidae_data, apidae_schemas
+from load import apidae_data, apidae_schemas
 from pprint import pprint
+import matplotlib.pyplot as plt
 
 list_types = []
 
@@ -55,3 +56,33 @@ for n in apidae_schemas['properties']['objetsTouristiques']['items']:
 common_fields = (set.intersection(*l))
 
 print('Champs communs à tous les objets touristiques:\n', common_fields)
+
+#%% DATA COMPLETENESS AGAINST SCHEMAS
+
+# Common fields present in each object
+
+count = {}
+
+for n in common_fields:
+    count[n] = 0
+
+for n in apidae_data['objetsTouristiques']:
+    s = set.intersection(common_fields, set(list(n.keys())))
+    for m in s:
+        count[m]= count[m] + 1
+        
+# percent
+
+for n in count:
+    count[n] = count[n]/len(apidae_data['objetsTouristiques'])*100
+
+#%% bar chart visualization
+
+fig = plt.figure(figsize=(19.2, 10.8))
+plt.bar(*zip(*count.items()))
+plt.title('Presence Percentage of Common Fields in the Dataset', size=36)
+plt.xlabel('Common Fields', size=24)
+plt.ylabel('Percentage %', size=24)
+plt.xticks(rotation=45)
+plt.grid(axis='y')
+plt.show()
