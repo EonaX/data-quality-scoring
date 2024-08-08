@@ -35,5 +35,8 @@ It is organized with three folders and a main.py file:
  + **definitions**: contains the files where are defined the scoring formula and the quality rules
  + **scoring**: where the data is assessed with scoring scripts
  + **indicators**: contains all output files displaying the different scores or data visualization
- + **suggestions**: future folder that contains scripts to suggest improvements.
+ + main.py: orchestrates and executes the different above-mentioned scripts
+
+Later will be added:
+ + **suggestions**: folder that contains scripts to suggest improvements.
 
