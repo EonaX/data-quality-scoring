@@ -31,11 +31,11 @@ Secondly, it will suggests improvements to the user.
 ## Python Project Architecture Schema
 ![Python Project Architecture Schema](docs/20240808_data_quality_scoring_tool_python_project_architecture.png)
 
-It is organized with three folders and a main.py file:
+It is organized with three folders and a **main.py** file:
  + **definitions**: contains the files where are defined the scoring formula and the quality rules
  + **scoring**: where the data is assessed with scoring scripts
  + **indicators**: contains all output files displaying the different scores or data visualization
- + main.py: orchestrates and executes the different above-mentioned scripts
+ + **main.py**: orchestrates and executes the different above-mentioned scripts
 
 Later will be added:
  + **suggestions**: folder that contains scripts to suggest improvements.
