@@ -11,15 +11,15 @@ import requests
 
 # with Postman
 
-with open('datasets/vaut_le_detour.json') as f:
+with open('data/datasets/vaut_le_detour.json') as f:
     apidae_data = json.load(f)
 
 #%% Download the schemas
 
-r = requests.get('https://github.com/apidae-tourisme/apidae-sit-schemas/raw/main/v002/api/output/apiObjetsTouristiquesResultat.schema')
+# r = requests.get('https://github.com/apidae-tourisme/apidae-sit-schemas/raw/main/v002/api/output/apiObjetsTouristiquesResultat.schema')
 
-with open(r'schemas/apiObjetsTouristiquesResultat.schema', 'wb') as f:
-    f.write(r.content)
+# with open(r'data/schemas/apiObjetsTouristiquesResultat.schema', 'wb') as f:
+#     f.write(r.content)
 
-with open('schemas/apiObjetsTouristiquesResultat.schema') as f:
+with open('data/schemas/apiObjetsTouristiquesResultat.schema') as f:
     apidae_schemas = json.load(f)

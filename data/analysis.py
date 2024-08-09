@@ -79,10 +79,10 @@ for n in count:
 #%% bar chart visualization
 
 fig = plt.figure(figsize=(19.2, 10.8))
-plt.bar(*zip(*count.items()))
-plt.title('Presence Percentage of Common Fields in the Dataset', size=36)
-plt.xlabel('Common Fields', size=24)
-plt.ylabel('Percentage %', size=24)
-plt.xticks(rotation=45)
-plt.grid(axis='y')
+plt.barh(*zip(*count.items()))
+plt.title('Completeness Percentage of Common Fields in the Dataset', size=36)
+plt.ylabel('Common Fields to All Types', size=24)
+plt.xlabel('percent %', size=24)
+#plt.xticks(rotation=45)
+plt.grid(axis='x')
 plt.show()

@@ -5,4 +5,6 @@ Created on Thu Aug  8 10:48:22 2024
 
 @author: maximeb
 """
+# definition of a null value
 
+null_value = [None,]
