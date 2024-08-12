@@ -8,7 +8,7 @@ Created on Thu Aug  8 14:47:01 2024
 
 import json
 
-def open_data(path):
+def open_data(path=None, streamlit_uploaded_file=None):
     """
     Load the data saved locally retrieved from a Postman GET request to the API.
 
@@ -23,12 +23,18 @@ def open_data(path):
         DESCRIPTION.
 
     """
-    with open(path) as f:
-        return json.load(f)
+    from io import StringIO
+
+    if path is not None:
+        with open(path) as f:
+            return json.load(f)
+    else:
+        string = StringIO(streamlit_uploaded_file.getvalue().decode("utf-8")).read()
+        return json.loads(string)
 
 def open_schemas(path):
     """
-    Load schemas saved locally previously retrieved from a GET request or other.
+    [DEPRECATED] Load schemas saved locally previously retrieved from a GET request or other.
 
     Parameters
     ----------
