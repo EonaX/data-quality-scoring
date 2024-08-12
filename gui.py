@@ -88,6 +88,8 @@ if apidae_data and apidae_schemas:
     with col1:
         
             # Weight editor
+            
+        st.write('You can edit the weights for each property:')
         
         edited_df = st.data_editor(df_properties,
                                     column_config = {
