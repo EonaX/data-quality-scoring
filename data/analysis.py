@@ -157,3 +157,21 @@ def get_completeness_percent(data, fields):
         
     return completeness_percent
 
+def get_total_score(completeness_percent):
+    """
+    Returns a total score of a dataset from a dict of completeness percent per properties.
+
+    Parameters
+    ----------
+    completeness_percent : dict
+        DESCRIPTION.
+
+    Returns
+    -------
+    total_score : float
+        DESCRIPTION.
+
+    """
+    total_score = round(sum(completeness_percent.values()) / len(completeness_percent), 1)
+    
+    return total_score

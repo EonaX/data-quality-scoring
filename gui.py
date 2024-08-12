@@ -13,9 +13,20 @@ import streamlit as st
 
 st.set_page_config(layout="wide")
 
+st.markdown(
+    """
+<style>
+[data-testid="stMetricValue"] {
+    font-size: 1000px;
+}
+</style>
+""",
+    unsafe_allow_html=True,
+)
+
 st.title('Data Quality App')
 
-st.header("Load Data and Schema")
+st.header("Load Data and Schema Files")
 
 # Upload area
 
@@ -37,12 +48,12 @@ elif file_location == 'this server':
     
     # Choice 2
     
-    if st.button('Load files'):
+    # if st.button('Load files'):
         apidae_data = open_data(path='data/datasets/vaut_le_detour.json')
         apidae_schemas = open_data(path='data/schemas/apiObjetsTouristiquesResultat.schema')
 
 
-st.header("Plotting")
+st.header("Data Quality Dashboard")
 
 # Report area
 
@@ -60,20 +71,21 @@ if apidae_data and apidae_schemas:
     
     # Display
     
-    fig = plot_completeness_bar(completeness_percent)
+    completeness_bar = plot_completeness_bar(completeness_percent, title = 'Data Completeness Bar Graph')
+    total_score_gauge = plot_total_score_gauge(total_score)
     
     col1, col2 = st.columns([5,2])
     with col1:
         
         # Plot
         
-        st.plotly_chart(fig, use_container_width=True, theme='streamlit')
+        st.plotly_chart(completeness_bar, use_container_width=True, theme='streamlit')
     
     with col2:
         
         # KPI/Score
         
-        st.metric(label = "Total Score", value = total_score)
+        st.plotly_chart(total_score_gauge, use_container_width=True, theme='streamlit')
 else:
     
     # Other instructions

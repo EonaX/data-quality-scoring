@@ -8,6 +8,8 @@ Created on Mon Aug 12 10:59:12 2024
 
 import plotly.express as px
 from plotly.offline import plot
+import plotly.graph_objects as go
+
 
 # plotly variables
 
@@ -58,4 +60,30 @@ def plot_completeness_bar(completeness, title='Data Set Completeness'):
                      "y":"Completeness Percent"
                      })
     update_layout(fig, title)
+    return fig
+
+# plotly indicator
+
+def plot_total_score_gauge(total_score, title = 'Total Completeness Score'):
+    fig = go.Figure(go.Indicator(
+        mode = "gauge+number",
+        value = total_score,
+        number = {'suffix':'%'},
+        gauge = {
+            'bar': {'color': "#ffffff"},
+            'axis': {'range': [None, 100], 'tickwidth': 1, 'tickcolor': "#ffffff"},
+            'bordercolor': "#ffffff",
+            'steps': [
+            {'range': [0, 20], 'color': '#af1c17'},
+            {'range': [20, 40], 'color': '#cf7673'},
+            {'range': [40, 60], 'color': '#a1a38c'},
+            {'range': [60, 80], 'color': '#8bd7b3'},
+            {'range': [80, 100], 'color': '#17af68'}],
+            
+            
+            }
+    ))
+    
+    update_layout(fig, title)
+    
     return fig
