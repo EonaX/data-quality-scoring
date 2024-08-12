@@ -184,7 +184,7 @@ def define_weights(completeness_percent):
 
 def get_total_score(df):
     """
-    Returns a total score of a dataset from a dict of completeness percent per properties.
+    Returns a total score from a dataset.
 
     Parameters
     ----------

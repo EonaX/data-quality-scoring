@@ -71,26 +71,23 @@ if apidae_data and apidae_schemas:
     df_properties = define_weights(completeness_percent)
     
     # Display
+
+        
+        # Completeness Bar Plot
     
     completeness_bar = plot_completeness_bar(completeness_percent, title = 'Data Completeness Bar Graph')
-
-
-        
-        # Plot
-        
+    
     st.plotly_chart(completeness_bar, use_container_width=True, theme='streamlit')
-    
-    
 
+        # Indicator
         
-        # KPI/Score
     st.header("Weights Editor")
     
     col1, col2 = st.columns(2)
     
     with col1:
         
-        # Weight editor
+            # Weight editor
         
         edited_df = st.data_editor(df_properties,
                                     column_config = {
@@ -104,6 +101,8 @@ if apidae_data and apidae_schemas:
         total_score = get_total_score(edited_df)
         
     with col2:
+        
+            # Total Completeness Gauge
         
         total_score_gauge = plot_total_score_gauge(total_score)
         st.plotly_chart(total_score_gauge, use_container_width=True, theme='streamlit')
