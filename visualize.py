@@ -16,12 +16,12 @@ import plotly.graph_objects as go
 def update_layout(fig, title):
     fig.update_layout(
         title = dict(text=title, 
-                     font=dict(family="sans serif", 
+                     font=dict(family="poppins", 
                                size=30
                                ), 
                      automargin=False, 
                      ),
-        font = dict(family="sans serif",
+        font = dict(family="poppins",
                     size=18,
                     )
         )
