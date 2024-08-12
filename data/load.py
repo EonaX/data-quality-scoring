@@ -7,6 +7,7 @@ Created on Thu Aug  8 14:47:01 2024
 """
 
 import json
+# import urllib3
 
 def open_data(path=None, streamlit_uploaded_file=None):
     """
@@ -53,18 +54,17 @@ def open_schemas(path):
 # with Postman
 
 
-# with requests
+# with urllib
 
-# # url = "https://api.plateforme.apidae-tourisme.com/api/v002/channel/recherche/list-objets-touristiques"
+# url = "https://api.plateforme.apidae-tourisme.com/api/v002/channel/recherche/list-objets-touristiques"
 
-# # params = {
-# #     "apiKey":"f4238d9a-e5ab-43eb-ada9-3d2e0230ec19",
-# #     "projectId":"29e03482-980b-4d37-b25b-dc88705a578e",
-# #     "searchId":"4609b3d7-e375-47cf-8a4c-a5a20ee68abc",
-# #     "count": 100
-# #     }
+# params = {
+#     "apiKey":"f4238d9a-e5ab-43eb-ada9-3d2e0230ec19",
+#     "projectId":"29e03482-980b-4d37-b25b-dc88705a578e",
+#     "searchId":"4609b3d7-e375-47cf-8a4c-a5a20ee68abc"
+#     }
 
-# # r = requests.get(url, params)
+# r = urllib3.request("GET", url, fields=params)
 
 #%% Download the schemas
 

@@ -14,6 +14,8 @@ import os
 # Variables
 
 cwd = os.getcwd()
+apidae_data = None
+apidae_schemas = None
 
 # path_data = 'data/datasets/vaut_le_detour.json'
 # path_schemas = 'data/schemas/apiObjetsTouristiquesResultat.schema'
