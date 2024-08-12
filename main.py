@@ -9,28 +9,34 @@ Created on Mon Aug 12 11:02:02 2024
 from data.load import *
 from data.analysis import *
 from visualize import *
+import os
 
 # Variables
 
-path_data = 'data/datasets/vaut_le_detour.json'
-path_schemas = 'data/schemas/apiObjetsTouristiquesResultat.schema'
+cwd = os.getcwd()
 
-apidae_data = open_data(path_data)
-apidae_schemas = open_schemas(path_schemas)
+# path_data = 'data/datasets/vaut_le_detour.json'
+# path_schemas = 'data/schemas/apiObjetsTouristiquesResultat.schema'
 
-# Data analysis
+# apidae_data = open_data(path_data)
+# apidae_schemas = open_schemas(path_schemas)
 
-print_list_types(apidae_data)
-print_infos_data(apidae_data)
+# functions
 
-# Schema analysis
+# # Data analysis
 
-count_objects_per_type(apidae_schemas)
-# print_properties_per_type(apidae_schemas)
-intersection_properties = print_common_properties(apidae_schemas)
+# print_list_types(apidae_data)
+# print_infos_data(apidae_data)
 
-# Data completeness
+# # Schema analysis
 
-completeness_percent = get_completeness_percent(apidae_data, intersection_properties)
+# count_objects_per_type(apidae_schemas)
+# # print_properties_per_type(apidae_schemas)
+# intersection_properties = get_common_properties(apidae_schemas)
 
-plot_completeness_bar(completeness_percent)
+# # Data completeness
+
+# completeness_percent = get_completeness_percent(apidae_data, intersection_properties)
+
+# plot_completeness_bar(completeness_percent)
+
