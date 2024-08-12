@@ -49,8 +49,8 @@ elif file_location == 'this server':
     # Choice 2
     
     # if st.button('Load files'):
-        apidae_data = open_data(path='data/datasets/vaut_le_detour.json')
-        apidae_schemas = open_data(path='data/schemas/apiObjetsTouristiquesResultat.schema')
+        apidae_data = open_data(path=f'{cwd}/data/datasets/vaut_le_detour.json')
+        apidae_schemas = open_data(path=f'{cwd}/data/schemas/apiObjetsTouristiquesResultat.schema')
 
 
 st.header("Data Quality Dashboard")
