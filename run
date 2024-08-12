@@ -1,1 +1,5 @@
-streamlit run gui.py
+#!/bin/bash
+
+source ~/virtual_environments/data-quality-tool/bin/activate
+
+streamlit run ~/github/data-quality-scoring/gui.py
