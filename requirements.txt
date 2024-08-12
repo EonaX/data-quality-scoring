@@ -1,4 +1,2 @@
-requests
-pprint
-plotly
-streamlit
+plotly==5.19.0
+streamlit==1.33.0
