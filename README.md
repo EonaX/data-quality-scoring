@@ -41,7 +41,10 @@ Later will be added:
  + **suggestions**: folder that contains scripts to suggest improvements to the user.
 
 ## Data Quality Application
-
-Graphical User Interface screenshot:
-
 ![Data Quality Application Screenshot](docs/20240812data_quality_tool_application_screenshot.jpg)
+
+The application's graphical user interface comprises:
+ + **upload area**: either load files already saved in the server or upload your own you have retrieved from Apidae API
+ + **Completeness Bar Graph**: displays the completeness percentage for each property in the whole dataset
+ + ** Weight Editor**: this is where you define the weight for each property. It is defined as '1.0' by default.
+ + **Total Completeness Score**: based on the weights and the completeness percentage, it returns a score on 100 represented on a gauge divided in five levels of quality.
