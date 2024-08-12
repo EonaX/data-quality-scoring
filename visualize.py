@@ -6,22 +6,26 @@ Created on Mon Aug 12 10:59:12 2024
 @author: maximeb
 """
 
-import matplotlib.pyplot as plt
-import seaborn
 import plotly.express as px
 from plotly.offline import plot
 
 # plotly variables
+
 def update_layout(fig, title):
     fig.update_layout(
         title = dict(text=title, 
-                     font=dict(size=50), 
-                     automargin=True, 
+                     font=dict(family="Poppins", 
+                               size=30
+                               ), 
+                     automargin=False, 
                      ),
-        font = dict(family="Courier New, monospace", 
-                  size=18, 
-                  color="RebeccaPurple")
+        font = dict(family="Poppins",
+                    size=18,
+                    )
         )
+    
+    fig.update_xaxes(tickangle=45
+                     )
 
 # plotly functions
 
@@ -54,4 +58,4 @@ def plot_completeness_bar(completeness, title='Data Set Completeness'):
                      "y":"Completeness Percent"
                      })
     update_layout(fig, title)
-    plot(fig)
+    return fig
