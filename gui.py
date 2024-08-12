@@ -11,6 +11,8 @@ from data.load import open_data
 from visualize import *
 import streamlit as st
 
+st.set_page_config(layout="wide")
+
 st.title('Data Quality App')
 
 st.header("Load Data and Schema")
@@ -39,3 +41,4 @@ if apidae_data and apidae_schemas:
     fig = plot_completeness_bar(completeness_percent)
     
     st.plotly_chart(fig, use_container_width=True, theme='streamlit')
+s
