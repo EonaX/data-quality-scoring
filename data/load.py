@@ -9,7 +9,39 @@ Created on Thu Aug  8 14:47:01 2024
 import json
 
 def open_data(path):
+    """
+    Load the data saved locally retrieved from a Postman GET request to the API.
+
+    Parameters
+    ----------
+    path : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    TYPE
+        DESCRIPTION.
+
+    """
     with open(path) as f:
+        return json.load(f)
+
+def open_schemas(path):
+    """
+    Load schemas saved locally previously retrieved from a GET request or other.
+
+    Parameters
+    ----------
+    path : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    TYPE
+        DESCRIPTION.
+
+    """
+    with open('data/schemas/apiObjetsTouristiquesResultat.schema') as f:
         return json.load(f)
     
 # with Postman
@@ -37,10 +69,7 @@ def open_data(path):
 # # with open(r'data/schemas/apiObjetsTouristiquesResultat.schema', 'wb') as f:
 # #     f.write(r.content)
 
-def open_schemas(path):
 
-    with open('data/schemas/apiObjetsTouristiquesResultat.schema') as f:
-        return json.load(f)
     
 #%%
 
