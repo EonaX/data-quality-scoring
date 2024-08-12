@@ -42,4 +42,6 @@ Later will be added:
 
 ## Data Quality Application
 
+Graphical User Interface screenshot:
+
 ![Data Quality Application Screenshot](docs/20240812data_quality_tool_application_screenshot.jpg)
