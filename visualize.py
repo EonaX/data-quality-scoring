@@ -21,7 +21,7 @@ def update_layout(fig, title):
                                ), 
                      automargin=False, 
                      ),
-        font = dict(family="Poppins",
+        font = dict(family="sans serif",
                     size=18,
                     )
         )
