@@ -40,3 +40,6 @@ It is organized with three folders and a **main.py** file:
 Later will be added:
  + **suggestions**: folder that contains scripts to suggest improvements to the user.
 
+## Data Quality Application
+
+![Data Quality Application Screenshot](docs/20240812data_quality_tool_application_screenshot.jpg)
