@@ -94,7 +94,7 @@ def print_properties_per_type(schema):
         if key == 'y':
                 pprint(schema['properties']['objetsTouristiques']['items'][n]['properties'], depth = 1)
 
-def print_common_properties(schema, print_results=False):
+def get_intersection_properties(schema, print_results=False):
 
     """
     Returns the intersection set of properties between all objetsTouristisques types.
@@ -156,3 +156,4 @@ def get_completeness_percent(data, fields):
         completeness_percent[n] = completeness_percent[n]/len(data['objetsTouristiques'])*100
         
     return completeness_percent
+
