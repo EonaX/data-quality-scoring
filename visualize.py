@@ -16,7 +16,7 @@ import plotly.graph_objects as go
 def update_layout(fig, title):
     fig.update_layout(
         title = dict(text=title, 
-                     font=dict(family="Poppins", 
+                     font=dict(family="sans serif", 
                                size=30
                                ), 
                      automargin=False, 
