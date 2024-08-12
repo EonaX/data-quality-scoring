@@ -67,25 +67,52 @@ if apidae_data and apidae_schemas:
     
     intersection_properties = get_intersection_properties(apidae_schemas)
     completeness_percent = get_completeness_percent(apidae_data, intersection_properties)
-    total_score = get_total_score(completeness_percent)
+    
+    df_properties = define_weights(completeness_percent)
     
     # Display
     
     completeness_bar = plot_completeness_bar(completeness_percent, title = 'Data Completeness Bar Graph')
-    total_score_gauge = plot_total_score_gauge(total_score)
-    
-    col1, col2 = st.columns([5,2])
-    with col1:
+
+
         
         # Plot
         
-        st.plotly_chart(completeness_bar, use_container_width=True, theme='streamlit')
+    st.plotly_chart(completeness_bar, use_container_width=True, theme='streamlit')
     
-    with col2:
+    
+
         
         # KPI/Score
+    st.header("Weights Editor")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
         
+        # Weight editor
+        
+        edited_df = st.data_editor(df_properties,
+                                    column_config = {
+                                        "property": "Property", 
+                                        "completeness_percent": "Completeness_Percent", 
+                                        "weight": "Weight"
+                                        },
+                                    column_order=("property", "weight"),
+                                    disabled=["property", "completeness_percent"],
+                                    hide_index = True)
+        total_score = get_total_score(edited_df)
+        
+    with col2:
+        
+        total_score_gauge = plot_total_score_gauge(total_score)
         st.plotly_chart(total_score_gauge, use_container_width=True, theme='streamlit')
+        
+
+    
+    
+    
+    
 else:
     
     # Other instructions

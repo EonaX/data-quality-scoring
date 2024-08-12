@@ -7,6 +7,7 @@ Created on Thu Aug  8 14:47:50 2024
 """
 
 from pprint import pprint
+import pandas as pd
 
 def print_list_types(data):
     """
@@ -157,9 +158,9 @@ def get_completeness_percent(data, fields):
         
     return completeness_percent
 
-def get_total_score(completeness_percent):
+def define_weights(completeness_percent):
     """
-    Returns a total score of a dataset from a dict of completeness percent per properties.
+    Create a dataframe describing properties.
 
     Parameters
     ----------
@@ -168,10 +169,34 @@ def get_total_score(completeness_percent):
 
     Returns
     -------
+    df_properties : TYPE
+        DESCRIPTION.
+
+    """
+    df_properties = pd.DataFrame({'property': completeness_percent.keys(), 
+                                  'completeness_percent': completeness_percent.values(),
+                                  'weight': 1.0
+                                  })
+    
+    return df_properties
+
+    
+
+def get_total_score(df):
+    """
+    Returns a total score of a dataset from a dict of completeness percent per properties.
+
+    Parameters
+    ----------
+    df_properties : df
+        DESCRIPTION.
+
+    Returns
+    -------
     total_score : float
         DESCRIPTION.
 
     """
-    total_score = round(sum(completeness_percent.values()) / len(completeness_percent), 1)
-    
+    total_score = sum(df['completeness_percent']*df['weight']) / sum(df['weight'])
+    total_score = round(total_score, 1)
     return total_score
