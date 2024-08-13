@@ -12,7 +12,7 @@ First of all, it is concerned with data completeness. It will provide:
 Secondly, it will suggests improvements to the user.
 
 ## Functional Schema
-![Functional Schema](https://github.com/EonaX/data-quality-scoring/blob/main/docs/20240808_data_quality_scoring_tool_functional_schema.png)
+![Functional Schema](docs/20240808_data_quality_scoring_tool_functional_schema.png)
 
 1. Inputs:
  + **Scoring Formula**: this is where are defined the weights to the corresponding fields. For example, the field *POI_name* has a 0.05 weight of the total score (which is equal to 1).
